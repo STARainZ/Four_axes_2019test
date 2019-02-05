@@ -79,7 +79,6 @@ extern uint8_t Mode_Flag;
 extern uint8_t land_carcount_sta3;
 extern float DEFAULT_KP_X,DEFAULT_KD_X,DEFAULT_KP_Y,DEFAULT_KD_Y;//参数校准
 extern uint16_t Chane1_Stable,Chane2_Stable,Chane3_Stable,Chane4_Stable;//零偏校准
-//extern uint8_t land_counter;
 int Para_Compared;
 uint8_t Para_Report=0;
 //*****************************************************************************
@@ -325,7 +324,6 @@ UART1IntHandler(void)
         //择地降落
         else if(ReciveData_UART1[0]=='S'&&ReciveData_UART1[1]=='S'&&ReciveData_UART1[2]=='S'&&ReciveData_UART1[3]=='S'&&Mode_Flag==3)
         {
-//            land_counter=60;
             GPIOPinWrite(GPIO_PORTF_BASE,GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 0);
             if(land_carcount_sta3!=2)
                 land_carcount_sta3=1;

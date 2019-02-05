@@ -162,34 +162,34 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-Four_axes.out \
+Four_axes_2019_winterfinal.out \
 
 EXE_OUTPUTS__QUOTED += \
-"Four_axes.out" \
+"Four_axes_2019_winterfinal.out" \
 
 BIN_OUTPUTS += \
-Four_axes.hex \
+Four_axes_2019_winterfinal.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"Four_axes.hex" \
+"Four_axes_2019_winterfinal.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "Four_axes.out"
+	@$(MAKE) --no-print-directory -Onone "Four_axes_2019_winterfinal.out"
 
 # Tool invocations
-Four_axes.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Four_axes_2019_winterfinal.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Four_axes.map" --heap_size=0 --stack_size=512 -i"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/lib" -i"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Four_axes_linkInfo.xml" --rom_model -o "Four_axes.out" $(ORDERED_OBJS)
+	"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Four_axes_2019_winterfinal.map" --heap_size=0 --stack_size=512 -i"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/lib" -i"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Four_axes_2019_winterfinal_linkInfo.xml" --rom_model -o "Four_axes_2019_winterfinal.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-Four_axes.hex: $(EXE_OUTPUTS)
+Four_axes_2019_winterfinal.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/bin/armhex"  -o "Four_axes.hex" $(EXE_OUTPUTS__QUOTED)
+	"E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/bin/armhex"  -o "Four_axes_2019_winterfinal.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 

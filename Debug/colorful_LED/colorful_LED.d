@@ -24,7 +24,7 @@ colorful_LED/colorful_LED.obj: E:/elec/TM4/TivaWare/driverlib/adc.h
 colorful_LED/colorful_LED.obj: E:/elec/TM4/TivaWare/utils/uartstdio.h
 colorful_LED/colorful_LED.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdarg.h
 colorful_LED/colorful_LED.obj: E:/elec/TM4/TivaWare/driverlib/pwm.h
-colorful_LED/colorful_LED.obj: E:/elec/ti/workspace_v7/Four_axes/delay/delay.h
+colorful_LED/colorful_LED.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h
 colorful_LED/colorful_LED.obj: ../colorful_LED/colorful_LED.h
 
 ../colorful_LED/colorful_LED.c: 
@@ -51,5 +51,5 @@ E:/elec/TM4/TivaWare/driverlib/adc.h:
 E:/elec/TM4/TivaWare/utils/uartstdio.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdarg.h: 
 E:/elec/TM4/TivaWare/driverlib/pwm.h: 
-E:/elec/ti/workspace_v7/Four_axes/delay/delay.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h: 
 ../colorful_LED/colorful_LED.h: 

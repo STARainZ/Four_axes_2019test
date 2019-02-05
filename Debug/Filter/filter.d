@@ -10,7 +10,7 @@ Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/machine/_stdint.h
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/_stdint.h
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdbool.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/math.h
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/_ti_config.h
 Filter/filter.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/linkage.h
@@ -31,11 +31,11 @@ Filter/filter.obj: E:/elec/TM4/TivaWare/driverlib/pwm.h
 Filter/filter.obj: E:/elec/TM4/TivaWare/grlib/grlib.h
 Filter/filter.obj: E:/elec/TM4/TivaWare/utils/uartstdio.h
 Filter/filter.obj: E:/elec/TM4/TivaWare/driverlib/interrupt.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/uart/uart.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/delay/delay.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h
-Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h
+Filter/filter.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 
 ../Filter/filter.c: 
 ../Filter/filter.h: 
@@ -47,7 +47,7 @@ E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/machine/_ty
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/machine/_stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/_stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdbool.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/math.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/_ti_config.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/linkage.h: 
@@ -68,8 +68,8 @@ E:/elec/TM4/TivaWare/driverlib/pwm.h:
 E:/elec/TM4/TivaWare/grlib/grlib.h: 
 E:/elec/TM4/TivaWare/utils/uartstdio.h: 
 E:/elec/TM4/TivaWare/driverlib/interrupt.h: 
-E:/elec/ti/workspace_v7/Four_axes/uart/uart.h: 
-E:/elec/ti/workspace_v7/Four_axes/delay/delay.h: 
-E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h: 
-E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 

@@ -2,7 +2,7 @@
 
 Pwm/pwm.obj: ../Pwm/pwm.c
 Pwm/pwm.obj: ../Pwm/pwm.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 Pwm/pwm.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdint.h
 Pwm/pwm.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/stdint.h
 Pwm/pwm.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/cdefs.h
@@ -31,16 +31,16 @@ Pwm/pwm.obj: E:/elec/TM4/TivaWare/driverlib/pwm.h
 Pwm/pwm.obj: E:/elec/TM4/TivaWare/grlib/grlib.h
 Pwm/pwm.obj: E:/elec/TM4/TivaWare/utils/uartstdio.h
 Pwm/pwm.obj: E:/elec/TM4/TivaWare/driverlib/interrupt.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/uart/uart.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/delay/delay.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/Filter/filter.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h
-Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Filter/filter.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h
+Pwm/pwm.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 
 ../Pwm/pwm.c: 
 ../Pwm/pwm.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/cdefs.h: 
@@ -69,9 +69,9 @@ E:/elec/TM4/TivaWare/driverlib/pwm.h:
 E:/elec/TM4/TivaWare/grlib/grlib.h: 
 E:/elec/TM4/TivaWare/utils/uartstdio.h: 
 E:/elec/TM4/TivaWare/driverlib/interrupt.h: 
-E:/elec/ti/workspace_v7/Four_axes/uart/uart.h: 
-E:/elec/ti/workspace_v7/Four_axes/delay/delay.h: 
-E:/elec/ti/workspace_v7/Four_axes/Filter/filter.h: 
-E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h: 
-E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Filter/filter.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 

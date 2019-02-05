@@ -17,8 +17,6 @@
 //#define ALARM_STX   0xFD
 //#define ALARM_END   0xFE
 
-//#define CAMERA_MID_X    60
-//#define CAMERA_MID_Y    90
 #define CAMERA_MID_X    80
 #define CAMERA_MID_Y    60
 

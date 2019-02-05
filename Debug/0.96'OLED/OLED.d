@@ -1,7 +1,7 @@
 # FIXED
 
 0.96'OLED/OLED.obj: ../0.96'OLED/OLED.c
-0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes/0.96'OLED/OLED.h
+0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/0.96'OLED/OLED.h
 0.96'OLED/OLED.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdint.h
 0.96'OLED/OLED.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/stdint.h
 0.96'OLED/OLED.obj: E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/cdefs.h
@@ -20,11 +20,11 @@
 0.96'OLED/OLED.obj: E:/elec/TM4/TivaWare/driverlib/gpio.h
 0.96'OLED/OLED.obj: E:/elec/TM4/TivaWare/driverlib/adc.h
 0.96'OLED/OLED.obj: E:/elec/TM4/TivaWare/driverlib/pwm.h
-0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes/0.96'OLED/OLEDFONT.h
-0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes/delay/delay.h
+0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/0.96'OLED/OLEDFONT.h
+0.96'OLED/OLED.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h
 
 ../0.96'OLED/OLED.c: 
-E:/elec/ti/workspace_v7/Four_axes/0.96'OLED/OLED.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/0.96'OLED/OLED.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/stdint.h: 
 E:/elec/ti/ccs740/ccsv7/tools/compiler/ti-cgt-arm_18.1.5.LTS/include/sys/cdefs.h: 
@@ -43,5 +43,5 @@ E:/elec/TM4/TivaWare/driverlib/timer.h:
 E:/elec/TM4/TivaWare/driverlib/gpio.h: 
 E:/elec/TM4/TivaWare/driverlib/adc.h: 
 E:/elec/TM4/TivaWare/driverlib/pwm.h: 
-E:/elec/ti/workspace_v7/Four_axes/0.96'OLED/OLEDFONT.h: 
-E:/elec/ti/workspace_v7/Four_axes/delay/delay.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/0.96'OLED/OLEDFONT.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h: 

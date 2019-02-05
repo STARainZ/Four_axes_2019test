@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * 文件名程: contral.c
+  * 文件名程: control.c
   * 作    者: By Sw Young
   * 版    本: V1.0
   * 功    能:
@@ -127,7 +127,14 @@ void LandMode(void)
     PwmControl_3(1100);
     PwmControl_4(1520);
 }
-
+/**
+  * 函 数 名:Point_Filter
+  * 函数功能: 坐标数据均值滤波
+  * 输入参数: 近三次误差值
+  * 返 回 值: 无
+  * 说    明: 无
+  *   2019.1.30
+  */
 void Point_Filter(int* pre_err,int* last_err,int* err)
 {
     int tempa,tempb,tempc,max,min;//用于防跳变滤波
@@ -156,16 +163,8 @@ void Point_Filter(int* pre_err,int* last_err,int* err)
   */
 void Get_Coordinate(void)
 {
-//    if(Real_XCoordinate==80&&Real_YCoordinate==60)
-//    {
-//        get_x = 60;
-//        get_y = 90;
-//    }
-//    else
-//    {
-        get_x = Real_XCoordinate;
-        get_y = Real_YCoordinate;
-//    }
+    get_x = Real_XCoordinate;
+    get_y = Real_YCoordinate;
 }
 /**
   * 函 数 名:Get_Distance

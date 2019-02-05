@@ -1,34 +1,17 @@
 /**
   ******************************************************************************
-  * 文件名程: main.c
+  * 文件名称: main.c
   * 作    者: By Sw Young
-  * 版    本: V1.0
+  * 版    本: V1.3
   * 功    能:
-  * 编写日期: 2018.7.6
-  ******************************************************************************
-  * 说明：
-  * 硬件平台：TM4C123G
-  *   *****
-  * 软件设计说明：
-  *   *****
-  * Github：
-  ******************************************************************************
-**/
-#include <stdint.h>
-#include <stdbool.h>
-/**
-  ******************************************************************************
-  * 文件名程: main.c
-  * 作    者: By Sw Young
-  * 版    本: V1.2
-  * 功    能:
-  * 编写日期: 2018.7.6
+  * 编写日期: 2019.1.30
   ******************************************************************************
   * 说明：
   * 硬件平台：
-  *   MCUc:TM4C123、Pixhawk、无线串口、无刷电机
+  *   MCUs:TM4C123、Pixhawk、openmv、无线串口、无刷电机、
   * 软件设计说明：
   *     测高、获取图像坐标在定时器中完成，左边按键开启定时器功能，右边按键关闭定时器功能。
+  * 新版本说明：TM4直接读取超声波高度数据，增加遥控调参功能：pid参数、零偏校准、升高下降第一阶油门
   * Github：
   ******************************************************************************
 **/
@@ -80,9 +63,9 @@ void HardwareConfig(void)
     Uart1Iint();        //串口1初始化
     UART3Iint();        //串口3初始化
 
-    PwmConfig();            //初始化PWM
+    PwmConfig();        //初始化PWM
 
-    LED_Config();    //LED初始化
+    LED_Config();       //LED初始化
     LED_Set(BLUE);
 
     OLED_Init();            //初始化OLED
@@ -123,9 +106,8 @@ extern volatile bool start_PID_H;
 extern uint8_t Para_Report;//回传
 extern float DEFAULT_KP_X,DEFAULT_KD_X,DEFAULT_KP_Y,DEFAULT_KD_Y;//调参
 extern uint16_t Chane1_Stable,Chane2_Stable,Chane3_Stable,Chane4_Stable;//零偏校准
-extern uint8_t Mode_Flag;
-bool mode4 =false;
-//extern uint16_t get_x, get_y;   //用于声光报警
+extern uint8_t Mode_Flag;   //模式标志位
+bool mode4 =false;      //用于模式4
 extern double fPeriod;//如果需要用pix_hawk超声波，则不需希尔排序加权值滤波
 /**
   * 函 数 名:Main
@@ -160,7 +142,7 @@ int main(void)
         }
         if(Control_Open&&Control_Open_Flag)
         {
-            Control_Open_Flag=true;
+            Control_Open_Flag=true;     //代码问题
             Control_Open_Flag = false;
             UnlockPixhawk();
             start_PID_H = true;
@@ -173,7 +155,7 @@ int main(void)
             start_PID_X = true;
             start_PID_Y = true;
         }
-        calculate_test();
+//        calculate_test();
         Display();
         if(start_PID_H!=true)
         {
@@ -192,7 +174,7 @@ int main(void)
 //                UARTprintf("XD00%d",(int)(DEFAULT_KD_X*100));
                 Para_Report++;
             }
-//            else if(Para_Report==2)
+//            else if(Para_Report==2)   //用于回传遥控器，暂不用
 //            {
 //                UARTprintf("YP0%d",(int)(DEFAULT_KP_Y*100));
 //                SysCtlDelay(SysCtlClockGet() / (1000 * 3));
@@ -200,8 +182,9 @@ int main(void)
 //                Para_Report=0;
 //            }
         }
-        mode4=false;
+
         //小车飞机在0.5-1.5m内声光报警,模式4
+        mode4=false;
         if(Real_XCoordinate!=80&&Real_YCoordinate!=60&&(int)Real_Distance>500&&(int)Real_Distance<1500&&Mode_Flag==4)
         {
             //BeepSet(0);

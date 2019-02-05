@@ -53,7 +53,7 @@ int err_y = 0;
 int last_err_x=0,last_err_y=0;
 int pre_last_err_x=0,pre_last_err_y=0;
 
-uint16_t err_h = 0;
+//uint16_t err_h = 0;
 
 uint16_t get_x = CAMERA_MID_X, get_y = CAMERA_MID_Y;
 
@@ -207,6 +207,7 @@ void Position_PID(void)
 }
 uint8_t t;
 uint8_t PrintNump[6];
+//定时器中打印数据关闭
 void Timer1IntHandler(void)
 {
     //
@@ -235,6 +236,7 @@ void Timer1IntHandler(void)
             DataIsReady=false;
             Real_Distance=fPeriod*0.002125;
        }
+       //高度跳变滤波
        if((Real_Distance<=0)||(Real_Distance-Distance_old>400)||(Real_Distance-Distance_old<-400))  //滤波
        {
            Real_Distance=Goal_Distance;
@@ -248,8 +250,10 @@ void Timer1IntHandler(void)
        Point_Filter(&pre_last_err_x,&last_err_x,&err_x);
        Point_Filter(&pre_last_err_y,&last_err_y,&err_y);
 
+       //模式2向前打舵
        if(land_counter>=35&&land_counter<=40&&Mode_Flag==2)
            err_y=-40;
+       //模式3向前打舵
        if(land_counter3>=25&&land_counter3<=30&&Mode_Flag==3&&followcount_sta)
            err_y=-40;
 //       UARTprintf("Err_x:%d Err_y:%d\n",err_x,err_y);
@@ -265,66 +269,38 @@ void Timer1IntHandler(void)
 //       UARTprintf("%d\t%d\n",channel_val_MID+(int)PID_Data_X.PID_OUT,channel_val_MID+(int)PID_Data_Y.PID_OUT);
        if(start_PID_H)
        {
-//           //定点时间计数,模式1
-//           if(((Real_Distance>(Goal_Distance-50))&&Real_Distance<Goal_Distance)||((Real_Distance<(Goal_Distance+50))&&Real_Distance>Goal_Distance))
-//            {
-//               if(Mode_Flag==1)
-//                   land_coun_sta=true;
-//            }
-//           //模式2计时
-           if(Goal_Distance-(int)Real_Distance > 100&&Goal_Distance-(int)Real_Distance <300)//200~400
-           {
-               PwmControl_3(1629);
-           }
-           else if(Goal_Distance-(int)Real_Distance > 300&&Goal_Distance-(int)Real_Distance <700)//0~200
-           {
-               PwmControl_3(1639);
-//               UARTprintf("Throttle:%d\n",(channel_val_MID+(int)(PID_H.Kp*err_h)));
-//               UARTprintf("err_h:%d\n",err_h);
-//               UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-           }
-           else if(Goal_Distance-(int)Real_Distance > 700)//0
-           {
-               PwmControl_3(1700);
-//               UARTprintf("Throttle:%d\n",(channel_val_MID+(int)(PID_H.Kp*err_h)));
-//               UARTprintf("err_h:%d\n",err_h);
-//               UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-           }
-           ////////////////////////////////////////////////////////////////////////
-           else if((int)Real_Distance - Goal_Distance > 100&&(int)Real_Distance - Goal_Distance < 300)//600~800
-           {
-               err_h = (int)Real_Distance-Goal_Distance;
-               //PwmControl_3((int)(channel_val_MID-(int)(PID_H.Kp*err_h)));
-               PwmControl_3(1430);
-//               UARTprintf("Throttle:%d\n",channel_val_MID-(int)(PID_H.Kp*err_h));
-//               UARTprintf("err_h:%d\n",err_h);
-//               UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-           }
-           else if((int)Real_Distance - Goal_Distance > 300&&(int)Real_Distance - Goal_Distance < 500)//800~1000
-          {
-              err_h = (int)Real_Distance-Goal_Distance;
-              //PwmControl_3((int)(channel_val_MID-(int)(PID_H.Kp*err_h)));
-              PwmControl_3(1425);
-//              UARTprintf("Throttle:%d\n",channel_val_MID-(int)(PID_H.Kp*err_h));
-//              UARTprintf("err_h:%d\n",err_h);
-//              UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-          }
-           else if((int)Real_Distance - Goal_Distance > 500)//1000
-         {
-             err_h = (int)Real_Distance-Goal_Distance;
-             //PwmControl_3((int)(channel_val_MID-(int)(PID_H.Kp*err_h)));
-             PwmControl_3(1410);
-//             UARTprintf("Throttle:%d\n",channel_val_MID-(int)(PID_H.Kp*err_h));
-//             UARTprintf("err_h:%d\n",err_h);
-//             UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-         }
-           else if((((int)Real_Distance-Goal_Distance<=100)&&((int)Real_Distance-Goal_Distance>0))||((Goal_Distance-(int)Real_Distance<=100)&&Goal_Distance-(int)Real_Distance>0))//调节死区 -100 ~ +100
-           {
-               PwmControl_3(channel_val_MID);
-//               UARTprintf("Throttle:%d\n",channel_val_MID+(int)(PID_H.Kp*0));
-//               UARTprintf("err_h:%d\n",err_h);
-//               UARTprintf("kp:%d\n",(int)(1000*PID_H.Kp));
-           }
+            if(Goal_Distance-(int)Real_Distance > 100&&Goal_Distance-(int)Real_Distance <300)//200~400
+            {
+                PwmControl_3(1629);
+            }
+            else if(Goal_Distance-(int)Real_Distance > 300&&Goal_Distance-(int)Real_Distance <700)//0~200
+            {
+                PwmControl_3(1639);
+            }
+            else if(Goal_Distance-(int)Real_Distance > 700)//0
+            {
+                PwmControl_3(1700);
+            }
+            ////////////////////////////////////////////////////////////////////////
+            else if((int)Real_Distance - Goal_Distance > 100&&(int)Real_Distance - Goal_Distance < 300)//600~800
+            {
+//               err_h = (int)Real_Distance-Goal_Distance;
+                PwmControl_3(1430);
+            }
+            else if((int)Real_Distance - Goal_Distance > 300&&(int)Real_Distance - Goal_Distance < 500)//800~1000
+            {
+//              err_h = (int)Real_Distance-Goal_Distance;
+                PwmControl_3(1425);
+            }
+            else if((int)Real_Distance - Goal_Distance > 500)//1000
+            {
+//             err_h = (int)Real_Distance-Goal_Distance;
+                PwmControl_3(1410);
+            }
+            else if((((int)Real_Distance-Goal_Distance<=100)&&((int)Real_Distance-Goal_Distance>0))||((Goal_Distance-(int)Real_Distance<=100)&&Goal_Distance-(int)Real_Distance>0))//调节死区 -100 ~ +100
+            {
+                PwmControl_3(channel_val_MID);
+            }
        }
     }
 

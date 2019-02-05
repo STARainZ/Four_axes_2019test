@@ -175,7 +175,7 @@ void Timer1_Config(void)
   * 返 回 值: 无
   * 说    明: 定时任务使用
   *   By xx
-  *   2018.03.29
+  *   2019.1.30
   */
 void Timer2_Config(void)
 {
@@ -213,7 +213,25 @@ void Timer2IntHandler(void)
     ui32IntStatus = TimerIntStatus(TIMER2_BASE, true);
     TimerIntClear(TIMER2_BASE, ui32IntStatus);//清除中断标志位
     TimerIntDisable(TIMER2_BASE, TIMER_TIMA_TIMEOUT);
-    //模式1计数15s
+
+    //定点时间计数,只进一次！！！
+    if(((Real_Distance>(Goal_Distance-50))&&Real_Distance<Goal_Distance)||((Real_Distance<(Goal_Distance+50))&&Real_Distance>Goal_Distance))
+    {
+        //模式1计时
+        if(Mode_Flag==1&&start_PID_H)
+            land_coun_sta=true;
+        //模式2计时，PITCH计数器，同时包含降落计时，模式二专用
+        else if(Mode_Flag==2&&start_PID_H)
+            land_carcount_sta=true;
+        //模式3跟车计时,PITCH计数器
+        else if(Mode_Flag==3&&!follow_flag) //只进一次
+        {
+            followcount_sta=true;
+            follow_flag=true;
+        }
+    }
+
+    //模式1计数10s
     if(land_coun_sta)
     {
         land_counter++;
@@ -245,6 +263,7 @@ void Timer2IntHandler(void)
         {
             UART3Send("12345",5);
         }
+        //定时器1中打舵
         if(land_counter>85) //降落
         {
             land_car_sta=true;
@@ -254,6 +273,21 @@ void Timer2IntHandler(void)
         }
     }
 
+    //模式3跟车计时,pitch计时
+    if(followcount_sta)
+    {
+        land_counter3++;
+        if(land_counter3==24&&Mode_Flag==3)  //uart3改阈值
+        {
+            UART3Send("12345",5);
+        }
+        else if(land_counter3>30&&Mode_Flag==3)
+        {
+            followcount_sta=false;
+            land_counter3=0;
+            UARTprintf("follow car\n");
+        }
+    }
     //模式3计数5s，择地降落
     if(land_carcount_sta3==1)
     {
@@ -267,6 +301,7 @@ void Timer2IntHandler(void)
         }
     }
 
+    //择地降落模式2，3通用，时间控制
     if(land_car_sta)
     {
         PwmControl_5(1950); //降落模式
@@ -274,7 +309,6 @@ void Timer2IntHandler(void)
         awaycount_sta=true;
         land_car_sta=false;
     }
-
     //远离小车计时，用于改变flag
     if(awaycount_sta)
     {
@@ -300,44 +334,7 @@ void Timer2IntHandler(void)
         PwmControl_2(1560);     //向后偏航
     if(away_over)
         PwmControl_2(1520);     //回中
-    //模式3跟车计时,pitch计时
-    if(followcount_sta)
-    {
-        land_counter3++;
-        if(land_counter3==24&&Mode_Flag==3)  //uart3改阈值
-        {
-            UART3Send("12345",5);
-        }
-        else if(land_counter3>30&&Mode_Flag==3)
-        {
-            followcount_sta=false;
-            land_counter3=0;
-            UARTprintf("follow car\n");
-        }
-    }
-//    //模式3五秒落地计时
-//    {
-//
-//    }
-    //定点时间计数,不能多次进！！！
-    if(((Real_Distance>(Goal_Distance-50))&&Real_Distance<Goal_Distance)||((Real_Distance<(Goal_Distance+50))&&Real_Distance>Goal_Distance))
-     {
-        //模式1计时
-        if(Mode_Flag==1&&start_PID_H)
-            land_coun_sta=true;
-        //模式2计时，PITCH计数器，同时包含降落计时，模式二专用
-        else if(Mode_Flag==2&&start_PID_H)
-            land_carcount_sta=true;
-        //模式3跟车计时,PITCH计数器
-        else if(Mode_Flag==3&&!follow_flag) //只进一次
-        {
-            followcount_sta=true;
-            follow_flag=true;
-        }
-     }
 
-//    ;
-//    UARTprintf("Land calculate:%d\n",(int)(86-land_counter));
-    TimerIntEnable(TIMER2_BASE, TIMER_TIMA_TIMEOUT);    //开关中断不能离太近
 
+    TimerIntEnable(TIMER2_BASE, TIMER_TIMA_TIMEOUT);
 }

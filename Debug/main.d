@@ -29,16 +29,16 @@ main.obj: E:/elec/TM4/TivaWare/driverlib/adc.h
 main.obj: E:/elec/TM4/TivaWare/driverlib/pwm.h
 main.obj: ../colorful_LED/colorful_LED.h
 main.obj: ../Pwm/pwm.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 main.obj: E:/elec/TM4/TivaWare/grlib/grlib.h
 main.obj: E:/elec/TM4/TivaWare/utils/uartstdio.h
 main.obj: E:/elec/TM4/TivaWare/driverlib/interrupt.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/uart/uart.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/delay/delay.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/Filter/filter.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h
-main.obj: E:/elec/ti/workspace_v7/Four_axes/head.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Filter/filter.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h
+main.obj: E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h
 main.obj: ../Timer/Timer.h
 main.obj: E:/elec/TM4/TivaWare/driverlib/uart.h
 main.obj: ../uart/uartstdio.h
@@ -77,16 +77,16 @@ E:/elec/TM4/TivaWare/driverlib/adc.h:
 E:/elec/TM4/TivaWare/driverlib/pwm.h: 
 ../colorful_LED/colorful_LED.h: 
 ../Pwm/pwm.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 
 E:/elec/TM4/TivaWare/grlib/grlib.h: 
 E:/elec/TM4/TivaWare/utils/uartstdio.h: 
 E:/elec/TM4/TivaWare/driverlib/interrupt.h: 
-E:/elec/ti/workspace_v7/Four_axes/uart/uart.h: 
-E:/elec/ti/workspace_v7/Four_axes/delay/delay.h: 
-E:/elec/ti/workspace_v7/Four_axes/Filter/filter.h: 
-E:/elec/ti/workspace_v7/Four_axes/Pid/pid.h: 
-E:/elec/ti/workspace_v7/Four_axes/sonar/sonar.h: 
-E:/elec/ti/workspace_v7/Four_axes/head.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/uart/uart.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/delay/delay.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Filter/filter.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/Pid/pid.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/sonar/sonar.h: 
+E:/elec/ti/workspace_v7/Four_axes_2019_winterfinal/head.h: 
 ../Timer/Timer.h: 
 E:/elec/TM4/TivaWare/driverlib/uart.h: 
 ../uart/uartstdio.h: 
